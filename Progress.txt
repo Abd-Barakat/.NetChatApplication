@@ -1,0 +1,32 @@
+Date :2019/3/28 
+Day  :Thursday 
+
+Building GUI and establish connection between clients and server so client can communicate with server now.
+
+
+Next step to able clients to send messages to each other 
+-----------------------------------------------------------------------------------------------------------
+Date :2019/3/31 
+Day  :Sunday 
+
+Modify Server class to able clients chat togethers, notes added, Exceptions created. 
+
+Task submitted.
+ 
+-----------------------------------------------------------------------------------------------------------
+Date :2019/4/1 
+Day  :Monday
+
+change encoding to support multilanguage, separate TCP segements in Client's stream, Server run independent from client.
+
+Next step is complete discussed points. 
+-----------------------------------------------------------------------------------------------------------
+Date :2019/4/2 
+Day  :Thuesday
+
+Make client able to re-connect to server if server faild, Modify closing operation between client and server
+
+
+
+Task submitted.
+ 
