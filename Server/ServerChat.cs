@@ -2,6 +2,7 @@
 using ChatApp;
 using System.Threading;
 using System.IO;
+using System.Windows.Forms;
 namespace Server
 {
     public class ServerChat : MarshalByRefObject, IChat
@@ -18,8 +19,16 @@ namespace Server
         /// <param name="Message"></param>
         public void BroadCastMessage(string Message)
         {
-            Console.WriteLine(Message);
-            /*ThreadPool.QueueUserWorkItem((x) => {*/ InvokeMessage(Message); /*});*/
+            try
+            {
+                Console.WriteLine(Message);
+                /*ThreadPool.QueueUserWorkItem((x) => {*/
+                InvokeMessage(Message); /*});*/
+            }
+            catch (Exception ex)
+            {
+                PrintErrors(ex.Message, ex);
+            }
         }
         /// <summary>
         /// Used by client to check if room is full or not and then throw the full exception.
@@ -27,15 +36,30 @@ namespace Server
         /// <returns></returns>
         public int GetNumOfClients()
         {
-            return NumberOfClients;
+            try
+            {
+                return NumberOfClients;
+            }
+            catch (Exception ex)
+            {
+                PrintErrors(ex.Message, ex);
+                return -1;
+            }
         }
         /// <summary>
         /// Decrement number of clients, used by client when exiting the chat room to notify the server.
         /// </summary>
         public void DecrementNumOfClients()
         {
-            NumberOfClients--;
-            Console.WriteLine("Number of client : " + NumberOfClients);
+            try
+            {
+                NumberOfClients--;
+                Console.WriteLine("Number of client : " + NumberOfClients);
+            }
+            catch (Exception ex)
+            {
+                PrintErrors(ex.Message, ex);
+            }
         }
         /// <summary>
         /// Send message to all connected clients by fire event in client's side.
@@ -43,27 +67,35 @@ namespace Server
         /// <param name="Message"></param>
         private void InvokeMessage(string Message)
         {
-            if (MessageArrived == null)
+            try
             {
-                return;
-            }
-            MessageArrivedEvent listener = null;
+                if (MessageArrived == null)
+                {
+                    return;
+                }
+                MessageArrivedEvent listener = null;
 
-            Delegate[] dels = MessageArrived.GetInvocationList();//get all delegates from clients to invoke them later
-            NumberOfClients = dels.Length;
-            foreach (Delegate del in dels)
-            {
-                try
+                Delegate[] dels = MessageArrived.GetInvocationList();//get all delegates from clients to invoke them later
+                NumberOfClients = dels.Length;
+                foreach (Delegate del in dels)
                 {
-                    listener = (MessageArrivedEvent)del;
-                    listener.Invoke(Message);
-                }
-                catch (Exception ex)//if user is not connected anymore.
-                {
-                    MessageArrived -= listener;
-                    PrintErrors(ex.Message, ex);
+                    try
+                    {
+                        listener = (MessageArrivedEvent)del;
+                        listener.Invoke(Message);
+                    }
+                    catch (Exception ex)//if user is not connected anymore.
+                    {
+                        MessageArrived -= listener;
+                        PrintErrors(ex.Message, ex);
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                PrintErrors(ex.Message, ex);
+            }
+
         }
 
         /// <summary>
@@ -77,15 +109,22 @@ namespace Server
         /// </param>
         private void PrintErrors(string Message, Exception ex)
         {
-            string ErrorPath = System.IO.Directory.GetParent(@"..\..\..\").FullName;
-            using (StreamWriter stream = new StreamWriter(ErrorPath + @"\Error.txt", true))
+            try
             {
-                stream.WriteLine("Date : " + DateTime.Now.ToLocalTime());
-                stream.WriteLine("Stack trace :");
-                stream.WriteLine(ex.StackTrace);
-                stream.WriteLine("Message :");
-                stream.WriteLine(Message);
-                stream.WriteLine("---------------------------------------------------------------------------------------------------------------");
+                string ErrorPath = System.IO.Directory.GetParent(@"..\..\..\").FullName;
+                using (StreamWriter stream = new StreamWriter(ErrorPath + @"\Error.txt", true))
+                {
+                    stream.WriteLine("Date : " + DateTime.Now.ToLocalTime());
+                    stream.WriteLine("Stack trace :");
+                    stream.WriteLine(ex.StackTrace);
+                    stream.WriteLine("Message :");
+                    stream.WriteLine(Message);
+                    stream.WriteLine("---------------------------------------------------------------------------------------------------------------");
+                }
+            }
+            catch (Exception newEx)
+            {
+                MessageBox.Show(newEx.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
     }

@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Windows.Forms;
 namespace ChatApp
 {
     public delegate void MessageArrivedEvent(string Msg);
@@ -16,7 +16,14 @@ namespace ChatApp
         /// <param name="message"></param>
         public void ProxyBroadCastMessage(string message)
         {
-            MessageArrived?.Invoke(message);//fire event in client side.
+            try
+            {
+                MessageArrived?.Invoke(message);//fire event in client side.
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -19,22 +19,35 @@ namespace ChatApplication
         /// </summary>
         public Main()
         {
-            InitializeComponent();
-            BinaryClientFormatterSinkProvider binaryClient = new BinaryClientFormatterSinkProvider();//convert messages in form of binary rather than xml
-            BinaryServerFormatterSinkProvider binaryServer = new BinaryServerFormatterSinkProvider();//convert messages in form of binary rather than xml
-            binaryServer.TypeFilterLevel = System.Runtime.Serialization.Formatters.TypeFilterLevel.Full;//cover all events 
-            Hashtable properties = new Hashtable();
-            properties["Name"] = "ClientChannel";
-            properties["port"] = 0;//means any available port in client.
-            tcpClient = new TcpChannel(properties, binaryClient, binaryServer);
-            clientProxy = new ClientProxy();
-            clientProxy.MessageArrived += ClientProxy_MessageArrived;
-
+            try
+            {
+                InitializeComponent();
+                BinaryClientFormatterSinkProvider binaryClient = new BinaryClientFormatterSinkProvider();//convert messages in form of binary rather than xml
+                BinaryServerFormatterSinkProvider binaryServer = new BinaryServerFormatterSinkProvider();//convert messages in form of binary rather than xml
+                binaryServer.TypeFilterLevel = System.Runtime.Serialization.Formatters.TypeFilterLevel.Full;//cover all events 
+                Hashtable properties = new Hashtable();
+                properties["Name"] = "ClientChannel";
+                properties["port"] = 0;//means any available port in client.
+                tcpClient = new TcpChannel(properties, binaryClient, binaryServer);
+                clientProxy = new ClientProxy();
+                clientProxy.MessageArrived += ClientProxy_MessageArrived;
+            }
+            catch (Exception ex)
+            {
+                PrintErrors(ex.Message, ex);
+            }
         }
 
         private void ClientProxy_MessageArrived(string Msg)
         {
-            SetText(Msg);
+            try
+            {
+                SetText(Msg);
+            }
+            catch (Exception ex)
+            {
+                PrintErrors(ex.Message, ex);
+            }
         }
 
         private delegate void SetTextCallBack(string msg);//handle SetText method to call it in the  UI thread
@@ -71,14 +84,22 @@ namespace ChatApplication
         /// <returns></returns>
         private bool IsRegistered()
         {
-            foreach (var Channel in ChannelServices.RegisteredChannels)
+            try
             {
-                if (Channel.ChannelName == tcpClient.ChannelName)
+                foreach (var Channel in ChannelServices.RegisteredChannels)
                 {
-                    return true;
+                    if (Channel.ChannelName == tcpClient.ChannelName)
+                    {
+                        return true;
+                    }
                 }
+                return false;
             }
-            return false;
+            catch (Exception ex)
+            {
+                PrintErrors(ex.Message, ex);
+                return false;
+            }
         }
         private void ConnectToServer()
         {
@@ -99,7 +120,7 @@ namespace ChatApplication
 
                 }
                 chat.MessageArrived += new MessageArrivedEvent(clientProxy.ProxyBroadCastMessage);
-                chat.BroadCastMessage(NameBox.Text + " Connected");
+                chat.BroadCastMessage(NameBox.Text + " is connected");
                 DisableInfoPanel();
             }
             catch (FullException ex)
@@ -146,14 +167,21 @@ namespace ChatApplication
         /// </summary>
         private void DisableInfoPanel()
         {
-            if (InformationPanel.InvokeRequired)
+            try
             {
-                DisableInformationPanel disable = new DisableInformationPanel(DisableInfoPanel);
-                BeginInvoke(disable);
+                if (InformationPanel.InvokeRequired)
+                {
+                    DisableInformationPanel disable = new DisableInformationPanel(DisableInfoPanel);
+                    BeginInvoke(disable);
+                }
+                else
+                {
+                    InformationPanel.Enabled = false;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                InformationPanel.Enabled = false;
+                PrintErrors(ex.Message, ex);
             }
         }
         /// <summary>
@@ -162,14 +190,21 @@ namespace ChatApplication
         /// <param name="box"></param>
         private void ClearBox(TextBox box)//this method will be used by thread 
         {
-            if (box.InvokeRequired)
+            try
             {
-                ClearTextBoxes clearTextBoxes = new ClearTextBoxes(ClearBox);
-                BeginInvoke(clearTextBoxes, box);
+                if (box.InvokeRequired)
+                {
+                    ClearTextBoxes clearTextBoxes = new ClearTextBoxes(ClearBox);
+                    BeginInvoke(clearTextBoxes, box);
+                }
+                else
+                {
+                    box.Text = "";
+                }
             }
-            else
+            catch (Exception ex)
             {
-                box.Text = "";
+                PrintErrors(ex.Message, ex);
             }
         }
         /// <summary>
@@ -179,7 +214,14 @@ namespace ChatApplication
         /// <param name="e"></param>
         private void ConnectButton_Click(object sender, EventArgs e)//start thread for connection.
         {
-            ThreadPool.QueueUserWorkItem((x) => { ConnectToServer(); });
+            try
+            {
+                ThreadPool.QueueUserWorkItem((x) => { ConnectToServer(); });
+            }
+            catch (Exception ex)
+            {
+                PrintErrors(ex.Message, ex);
+            }
         }
         /// <summary>
         /// send text from MsgBox into server using the established connection
@@ -215,17 +257,31 @@ namespace ChatApplication
 
         private void MsgBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyData == Keys.Enter)
+            try
             {
-                SendButton_Click(null, null);
+                if (e.KeyData == Keys.Enter)
+                {
+                    SendButton_Click(null, null);
+                }
+            }
+            catch(Exception ex)
+            {
+                PrintErrors(ex.Message, ex);
             }
         }
 
         private void AddressBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyData == Keys.Enter)
+            try
             {
-                ConnectButton_Click(null, null);
+                if (e.KeyData == Keys.Enter)
+                {
+                    ConnectButton_Click(null, null);
+                }
+            }
+            catch (Exception ex)
+            {
+                PrintErrors(ex.Message, ex);
             }
         }
 
@@ -237,17 +293,24 @@ namespace ChatApplication
         /// </param>
         private void PrintErrors(Exception ex)
         {
-            string ErrorPath = System.IO.Directory.GetParent(@"..\..\..\").FullName;
-            using (StreamWriter stream = new StreamWriter(ErrorPath + @"\Error.txt", true))
+            try
             {
+                string ErrorPath = System.IO.Directory.GetParent(@"..\..\..\").FullName;
+                using (StreamWriter stream = new StreamWriter(ErrorPath + @"\Error.txt", true))
+                {
 
-                stream.WriteLine("Date : " + DateTime.Now.ToLocalTime());
-                stream.WriteLine("Stack trace :");
-                stream.WriteLine(ex.StackTrace);
-                stream.WriteLine("Message :");
-                stream.WriteLine(ex.Message);
-                stream.WriteLine("---------------------------------------------------------------------------------------------------------------");
+                    stream.WriteLine("Date : " + DateTime.Now.ToLocalTime());
+                    stream.WriteLine("Stack trace :");
+                    stream.WriteLine(ex.StackTrace);
+                    stream.WriteLine("Message :");
+                    stream.WriteLine(ex.Message);
+                    stream.WriteLine("---------------------------------------------------------------------------------------------------------------");
 
+                }
+            }
+            catch (Exception NewEx)
+            {
+                MessageBox.Show(NewEx.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         /// <summary>
@@ -261,15 +324,22 @@ namespace ChatApplication
         /// </param>
         private void PrintErrors(string Message, Exception ex)
         {
-            string ErrorPath = System.IO.Directory.GetParent(@"..\..\..\").FullName;
-            using (StreamWriter stream = new StreamWriter(ErrorPath + @"\Error.txt", true))
+            try
             {
-                stream.WriteLine("Date : " + DateTime.Now.ToLocalTime());
-                stream.WriteLine("Stack trace :");
-                stream.WriteLine(ex.StackTrace);
-                stream.WriteLine("Message :");
-                stream.WriteLine(Message);
-                stream.WriteLine("---------------------------------------------------------------------------------------------------------------");
+                string ErrorPath = System.IO.Directory.GetParent(@"..\..\..\").FullName;
+                using (StreamWriter stream = new StreamWriter(ErrorPath + @"\Error.txt", true))
+                {
+                    stream.WriteLine("Date : " + DateTime.Now.ToLocalTime());
+                    stream.WriteLine("Stack trace :");
+                    stream.WriteLine(ex.StackTrace);
+                    stream.WriteLine("Message :");
+                    stream.WriteLine(Message);
+                    stream.WriteLine("---------------------------------------------------------------------------------------------------------------");
+                }
+            }
+            catch (Exception NewEx)
+            {
+                MessageBox.Show(NewEx.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         /// <summary>
@@ -281,9 +351,9 @@ namespace ChatApplication
             {
                 if (chat != null)
                 {
-                    chat.DecrementNumOfClients();
-                    chat.MessageArrived -= clientProxy.ProxyBroadCastMessage;
-                    ChannelServices.UnregisterChannel(tcpClient);
+                    chat.DecrementNumOfClients();//decrement number of clients 
+                    chat.MessageArrived -= clientProxy.ProxyBroadCastMessage;//remove client event handler from server delegate.
+                    ChannelServices.UnregisterChannel(tcpClient);//remove current tcp port to make it free for other procces 
                 }
             }
             catch (Exception ex)
@@ -295,7 +365,14 @@ namespace ChatApplication
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ThreadPool.QueueUserWorkItem((x) => { Closing_Client(); });
+            try
+            {
+                ThreadPool.QueueUserWorkItem((x) => { Closing_Client(); });
+            }
+            catch (Exception ex)
+            {
+                PrintErrors(ex.Message, ex);
+            }
         }
     }
 }

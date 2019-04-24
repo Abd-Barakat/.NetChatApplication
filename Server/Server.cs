@@ -5,6 +5,7 @@ using System.Runtime.Remoting.Channels.Tcp;
 using System.Net;
 using System.Net.Sockets;
 using System.IO;
+using System.Windows.Forms;
 namespace Server
 {
     class Server
@@ -50,15 +51,22 @@ namespace Server
         /// </param>
         private static void PrintErrors(string Message, Exception ex)
         {
-            string ErrorPath = System.IO.Directory.GetParent(@"..\..\..\").FullName;
-            using (StreamWriter stream = new StreamWriter(ErrorPath + @"\Error.txt", true))
+            try
             {
-                stream.WriteLine("Date : " + DateTime.Now.ToLocalTime());
-                stream.WriteLine("Stack trace :");
-                stream.WriteLine(ex.StackTrace);
-                stream.WriteLine("Message :");
-                stream.WriteLine(Message);
-                stream.WriteLine("---------------------------------------------------------------------------------------------------------------");
+                string ErrorPath = System.IO.Directory.GetParent(@"..\..\..\").FullName;
+                using (StreamWriter stream = new StreamWriter(ErrorPath + @"\Error.txt", true))
+                {
+                    stream.WriteLine("Date : " + DateTime.Now.ToLocalTime());
+                    stream.WriteLine("Stack trace :");
+                    stream.WriteLine(ex.StackTrace);
+                    stream.WriteLine("Message :");
+                    stream.WriteLine(Message);
+                    stream.WriteLine("---------------------------------------------------------------------------------------------------------------");
+                }
+            }
+            catch (Exception NewEx)
+            {
+                MessageBox.Show(NewEx.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -73,14 +81,22 @@ namespace Server
         /// </returns>
         private static IPAddress GetAddress(IPHostEntry Host)
         {
-            foreach (IPAddress iP in Host.AddressList)
+            try
             {
-                if (iP.AddressFamily == AddressFamily.InterNetwork)//return IPv4 address only
+                foreach (IPAddress iP in Host.AddressList)
                 {
-                    return iP;
+                    if (iP.AddressFamily == AddressFamily.InterNetwork)//return IPv4 address only
+                    {
+                        return iP;
+                    }
                 }
+                return IPAddress.Parse("127.0.0.1");
             }
-            return IPAddress.Parse("127.0.0.1");
+            catch (Exception ex)
+            {
+                PrintErrors(ex.Message, ex);
+                return  null;
+            }
         }
     }
 }
