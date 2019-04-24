@@ -31,12 +31,12 @@ namespace ChatApplication
         {
 
             InitializeComponent();
-            BinaryClientFormatterSinkProvider binaryClient = new BinaryClientFormatterSinkProvider();
-            BinaryServerFormatterSinkProvider binaryServer = new BinaryServerFormatterSinkProvider();
-            binaryServer.TypeFilterLevel = System.Runtime.Serialization.Formatters.TypeFilterLevel.Full;
+            BinaryClientFormatterSinkProvider binaryClient = new BinaryClientFormatterSinkProvider();//convert messages in form of binary rather than xml
+            BinaryServerFormatterSinkProvider binaryServer = new BinaryServerFormatterSinkProvider();//convert messages in form of binary rather than xml
+            binaryServer.TypeFilterLevel = System.Runtime.Serialization.Formatters.TypeFilterLevel.Full;//cover all events 
             Hashtable properties = new Hashtable();
             properties["Name"] = "ClientChannel";
-            properties["port"] = 0;
+            properties["port"] = 0;//means any available port in client.
             tcpClient = new TcpChannel(properties, binaryClient, binaryServer);
             clientProxy = new ClientProxy();
             clientProxy.MessageArrived += ClientProxy_MessageArrived;
@@ -73,7 +73,7 @@ namespace ChatApplication
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "rsddererer");
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -153,7 +153,7 @@ namespace ChatApplication
 
         public delegate void ClearTextBoxes(TextBox box);
 
-        private void ClearBox(TextBox box)
+        private void ClearBox(TextBox box)//this method will be used by thread 
         {
             if (box.InvokeRequired)
             {
@@ -170,7 +170,7 @@ namespace ChatApplication
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ConnectButton_Click(object sender, EventArgs e)
+        private void ConnectButton_Click(object sender, EventArgs e)//start thread for connection.
         {
             if (connectionThread.ThreadState == (System.Threading.ThreadState.Unstarted | System.Threading.ThreadState.Background))
             {
@@ -238,7 +238,7 @@ namespace ChatApplication
             {
                 if (chat != null)
                 {
-                    chat.DecrementNumOfClients();
+                    chat.DecrementNumOfClients();//notify server that you are exiting the room.
                 }
             }
             catch (Exception ex)

@@ -18,8 +18,8 @@ namespace Server
         /// </summary>
         static void Main(string[] args)
         {
-            IPHostEntry iPHost = Dns.GetHostEntry(Dns.GetHostName());
-            Console.WriteLine(GetAddress(iPHost));
+            IPHostEntry iPHost = Dns.GetHostEntry(Dns.GetHostName());//get current machine 
+            Console.WriteLine(GetAddress(iPHost));//print Ipv4 address 
 
             BinaryServerFormatterSinkProvider serverProvider =
                  new BinaryServerFormatterSinkProvider();
