@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ChatApp
 {
@@ -10,7 +6,7 @@ namespace ChatApp
     public class ClientProxy:MarshalByRefObject
     {
         /// <summary>
-        /// delegate to Client's event handler.
+        /// Delegate to client's event handler.
         /// </summary>
         public event MessageArrivedEvent MessageArrived;
         
@@ -20,10 +16,7 @@ namespace ChatApp
         /// <param name="message"></param>
         public void ProxyBroadCastMessage(string message)
         {
-            if (MessageArrived !=null)
-            {
-                MessageArrived(message);//fire event in client side.
-            }
+            MessageArrived?.Invoke(message);//fire event in client side.
         }
     }
 }

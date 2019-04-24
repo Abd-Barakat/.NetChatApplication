@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Diagnostics;
 using System.Threading;
-using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Tcp;
 using System.IO;
@@ -23,13 +14,11 @@ namespace ChatApplication
         private TcpChannel tcpClient;
         private IChat chat;
         private ClientProxy clientProxy;
-        private Thread connectionThread;
         /// <summary>
         /// Initialize clients & create thread to listen from server
         /// </summary>
         public Main()
         {
-
             InitializeComponent();
             BinaryClientFormatterSinkProvider binaryClient = new BinaryClientFormatterSinkProvider();//convert messages in form of binary rather than xml
             BinaryServerFormatterSinkProvider binaryServer = new BinaryServerFormatterSinkProvider();//convert messages in form of binary rather than xml
@@ -40,8 +29,7 @@ namespace ChatApplication
             tcpClient = new TcpChannel(properties, binaryClient, binaryServer);
             clientProxy = new ClientProxy();
             clientProxy.MessageArrived += ClientProxy_MessageArrived;
-            connectionThread = new Thread(ConnectToServer);
-            connectionThread.IsBackground = true;
+
         }
 
         private void ClientProxy_MessageArrived(string Msg)
@@ -112,7 +100,7 @@ namespace ChatApplication
                 }
                 chat.MessageArrived += new MessageArrivedEvent(clientProxy.ProxyBroadCastMessage);
                 chat.BroadCastMessage(NameBox.Text + " Connected");
-                InformationPanel.Enabled = false;
+                DisableInfoPanel();
             }
             catch (FullException ex)
             {
@@ -152,7 +140,26 @@ namespace ChatApplication
         }
 
         public delegate void ClearTextBoxes(TextBox box);
-
+        public delegate void DisableInformationPanel();
+        /// <summary>
+        /// Disable Information Panel from Connection Thread after connection successed.
+        /// </summary>
+        private void DisableInfoPanel()
+        {
+            if (InformationPanel.InvokeRequired)
+            {
+                DisableInformationPanel disable = new DisableInformationPanel(DisableInfoPanel);
+                BeginInvoke(disable);
+            }
+            else
+            {
+                InformationPanel.Enabled = false;
+            }
+        }
+        /// <summary>
+        /// Clear Msg Box after delivering the previous message.
+        /// </summary>
+        /// <param name="box"></param>
         private void ClearBox(TextBox box)//this method will be used by thread 
         {
             if (box.InvokeRequired)
@@ -172,15 +179,7 @@ namespace ChatApplication
         /// <param name="e"></param>
         private void ConnectButton_Click(object sender, EventArgs e)//start thread for connection.
         {
-            if (connectionThread.ThreadState == (System.Threading.ThreadState.Unstarted | System.Threading.ThreadState.Background))
-            {
-                connectionThread.Start();
-            }
-            else if (connectionThread.ThreadState == System.Threading.ThreadState.Stopped)
-            {
-                connectionThread = new Thread(ConnectToServer);
-                connectionThread.Start();
-            }
+            ThreadPool.QueueUserWorkItem((x) => { ConnectToServer(); });
         }
         /// <summary>
         /// send text from MsgBox into server using the established connection
@@ -203,11 +202,13 @@ namespace ChatApplication
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 PrintErrors(ex);
                 chat = null;
+                InformationPanel.Enabled = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 PrintErrors(ex);
+                InformationPanel.Enabled = true;
                 chat = null;
             }
         }
@@ -227,25 +228,7 @@ namespace ChatApplication
                 ConnectButton_Click(null, null);
             }
         }
-        /// <summary>
-        /// Notify server that client will close.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Main_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            try
-            {
-                if (chat != null)
-                {
-                    chat.DecrementNumOfClients();//notify server that you are exiting the room.
-                }
-            }
-            catch (Exception ex)
-            {
-                PrintErrors(ex.Message, ex);
-            }
-        }
+
         /// <summary>
         /// Print exception message in Error.txt file in the application folder.
         /// </summary>
@@ -257,12 +240,14 @@ namespace ChatApplication
             string ErrorPath = System.IO.Directory.GetParent(@"..\..\..\").FullName;
             using (StreamWriter stream = new StreamWriter(ErrorPath + @"\Error.txt", true))
             {
+
                 stream.WriteLine("Date : " + DateTime.Now.ToLocalTime());
                 stream.WriteLine("Stack trace :");
                 stream.WriteLine(ex.StackTrace);
                 stream.WriteLine("Message :");
                 stream.WriteLine(ex.Message);
                 stream.WriteLine("---------------------------------------------------------------------------------------------------------------");
+
             }
         }
         /// <summary>
@@ -286,6 +271,31 @@ namespace ChatApplication
                 stream.WriteLine(Message);
                 stream.WriteLine("---------------------------------------------------------------------------------------------------------------");
             }
+        }
+        /// <summary>
+        ///  Notify server that client will close.
+        /// </summary>
+        private void Closing_Client()
+        {
+            try
+            {
+                if (chat != null)
+                {
+                    chat.DecrementNumOfClients();
+                    chat.MessageArrived -= clientProxy.ProxyBroadCastMessage;
+                    ChannelServices.UnregisterChannel(tcpClient);
+                }
+            }
+            catch (Exception ex)
+            {
+                //Server is  Shutdown.
+                PrintErrors(ex.InnerException.Message, ex);
+            }
+        }
+
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ThreadPool.QueueUserWorkItem((x) => { Closing_Client(); });
         }
     }
 }

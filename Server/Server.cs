@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Tcp;
 using System.Net;
 using System.Net.Sockets;
+using System.IO;
 namespace Server
 {
     class Server
@@ -18,20 +15,53 @@ namespace Server
         /// </summary>
         static void Main(string[] args)
         {
-            IPHostEntry iPHost = Dns.GetHostEntry(Dns.GetHostName());//get current machine 
-            Console.WriteLine(GetAddress(iPHost));//print Ipv4 address 
+            try
+            {
+                IPHostEntry iPHost = Dns.GetHostEntry(Dns.GetHostName());//get current machine 
 
-            BinaryServerFormatterSinkProvider serverProvider =
-                 new BinaryServerFormatterSinkProvider();
-            serverProvider.TypeFilterLevel =
-                  System.Runtime.Serialization.Formatters.TypeFilterLevel.Full;
+                BinaryServerFormatterSinkProvider serverProvider =
+                     new BinaryServerFormatterSinkProvider();
+                serverProvider.TypeFilterLevel =
+                      System.Runtime.Serialization.Formatters.TypeFilterLevel.Full;
 
-            serverChannel = new TcpServerChannel("ServerChannel", 9988 , serverProvider);
-            ChannelServices.RegisterChannel(serverChannel, false);
-            RemotingConfiguration.RegisterWellKnownServiceType(typeof(ServerChat), "Chat", WellKnownObjectMode.Singleton);
-            Console.WriteLine("Server started");
-            Console.ReadLine();
+                serverChannel = new TcpServerChannel("ServerChannel", 9988, serverProvider);
+                Console.WriteLine(GetAddress(iPHost));//print Ipv4 address 
+                ChannelServices.RegisterChannel(serverChannel, false);
+                RemotingConfiguration.RegisterWellKnownServiceType(typeof(ServerChat), "Chat", WellKnownObjectMode.Singleton);
+                Console.WriteLine("Server started");
+                Console.ReadLine();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Server is already running");//print Ipv4 address 
+                PrintErrors("Server is already running", ex);
+              
+            }
+
         }
+        /// <summary>
+        /// Print exception message in Error.txt file in the application folder.
+        /// </summary>
+        /// <param name="Message">
+        /// error message
+        /// </param>
+        /// <param name="ex">
+        /// exception to write it's stack trace
+        /// </param>
+        private static void PrintErrors(string Message, Exception ex)
+        {
+            string ErrorPath = System.IO.Directory.GetParent(@"..\..\..\").FullName;
+            using (StreamWriter stream = new StreamWriter(ErrorPath + @"\Error.txt", true))
+            {
+                stream.WriteLine("Date : " + DateTime.Now.ToLocalTime());
+                stream.WriteLine("Stack trace :");
+                stream.WriteLine(ex.StackTrace);
+                stream.WriteLine("Message :");
+                stream.WriteLine(Message);
+                stream.WriteLine("---------------------------------------------------------------------------------------------------------------");
+            }
+        }
+
         /// <summary>
         /// return current IP address for server
         /// </summary>

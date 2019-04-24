@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ChatApp;
-using System.Windows.Forms;
+using System.Threading;
+using System.IO;
 namespace Server
 {
     public class ServerChat : MarshalByRefObject, IChat
     {
+        Thread Temp;
         private int NumberOfClients;
         /// <summary>
         /// Initialized by client to point on event handler in client side.
@@ -21,7 +19,7 @@ namespace Server
         public void BroadCastMessage(string Message)
         {
             Console.WriteLine(Message);
-            InvokeMessage(Message);
+            /*ThreadPool.QueueUserWorkItem((x) => {*/ InvokeMessage(Message); /*});*/
         }
         /// <summary>
         /// Used by client to check if room is full or not and then throw the full exception.
@@ -50,6 +48,7 @@ namespace Server
                 return;
             }
             MessageArrivedEvent listener = null;
+
             Delegate[] dels = MessageArrived.GetInvocationList();//get all delegates from clients to invoke them later
             NumberOfClients = dels.Length;
             foreach (Delegate del in dels)
@@ -59,10 +58,34 @@ namespace Server
                     listener = (MessageArrivedEvent)del;
                     listener.Invoke(Message);
                 }
-                catch (Exception)//if user is not connected any more.
+                catch (Exception ex)//if user is not connected anymore.
                 {
                     MessageArrived -= listener;
+                    PrintErrors(ex.Message, ex);
                 }
+            }
+        }
+
+        /// <summary>
+        /// Print exception message in Error.txt file in the application folder.
+        /// </summary>
+        /// <param name="Message">
+        /// error message
+        /// </param>
+        /// <param name="ex">
+        /// exception to write it's stack trace
+        /// </param>
+        private void PrintErrors(string Message, Exception ex)
+        {
+            string ErrorPath = System.IO.Directory.GetParent(@"..\..\..\").FullName;
+            using (StreamWriter stream = new StreamWriter(ErrorPath + @"\Error.txt", true))
+            {
+                stream.WriteLine("Date : " + DateTime.Now.ToLocalTime());
+                stream.WriteLine("Stack trace :");
+                stream.WriteLine(ex.StackTrace);
+                stream.WriteLine("Message :");
+                stream.WriteLine(Message);
+                stream.WriteLine("---------------------------------------------------------------------------------------------------------------");
             }
         }
     }

@@ -2312,3 +2312,1579 @@ Exception rethrown at [0]:
 Message :
 An existing connection was forcibly closed by the remote host
 ---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 10:42:53 AM
+Stack trace :
+   at System.Windows.Forms.Control.get_Handle()
+   at System.Windows.Forms.Control.OnEnabledChanged(EventArgs e)
+   at System.Windows.Forms.Control.set_Enabled(Boolean value)
+   at ChatApplication.Main.ConnectToServer() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 116
+Message :
+Cross-thread operation not valid: Control 'InformationPanel' accessed from a thread other than the thread it was created on.
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 10:45:59 AM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Runtime.Remoting.Channels.SocketStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Runtime.Remoting.Channels.ChunkedMemoryStream.WriteTo(Stream stream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.GetRequestStream(IMessage msg, Int32 contentLength, ITransportHeaders headers)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.SendRequest(IMessage msg, ITransportHeaders headers, Stream contentStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.DecrementNumOfClients()
+   at ChatApplication.Main.Main_FormClosing(Object sender, FormClosingEventArgs e) in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 254
+Message :
+An existing connection was forcibly closed by the remote host
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 10:47:15 AM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket(EndPoint ipEndPoint)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.GetNumOfClients()
+   at ChatApplication.Main.ConnectToServer() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 109
+Message :
+No connection could be made because the target machine actively refused it 192.168.56.1:9988
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 10:48:05 AM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Runtime.Remoting.Channels.SocketStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at System.Runtime.Remoting.Channels.SocketHandler.ReadFromSocket(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Runtime.Remoting.Channels.SocketHandler.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Runtime.Remoting.Channels.SocketHandler.ReadAndMatchFourBytes(Byte[] buffer)
+   at System.Runtime.Remoting.Channels.Tcp.TcpSocketHandler.ReadAndMatchPreamble()
+   at System.Runtime.Remoting.Channels.Tcp.TcpSocketHandler.ReadVersionAndOperation(UInt16& operation)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.ReadHeaders()
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.BroadCastMessage(String Message)
+   at ChatApplication.Main.ConnectToServer() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 115
+Message :
+An existing connection was forcibly closed by the remote host
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 10:48:07 AM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Runtime.Remoting.Channels.SocketStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Runtime.Remoting.Channels.ChunkedMemoryStream.WriteTo(Stream stream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.GetRequestStream(IMessage msg, Int32 contentLength, ITransportHeaders headers)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.SendRequest(IMessage msg, ITransportHeaders headers, Stream contentStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.DecrementNumOfClients()
+   at ChatApplication.Main.Main_FormClosing(Object sender, FormClosingEventArgs e) in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 254
+Message :
+An existing connection was forcibly closed by the remote host
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 10:48:08 AM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket(EndPoint ipEndPoint)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.DecrementNumOfClients()
+   at ChatApplication.Main.Main_FormClosing(Object sender, FormClosingEventArgs e) in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 254
+Message :
+No connection could be made because the target machine actively refused it 192.168.56.1:9988
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 10:50:38 AM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket(EndPoint ipEndPoint)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.DecrementNumOfClients()
+   at ChatApplication.Main.Main_FormClosing(Object sender, FormClosingEventArgs e) in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 254
+Message :
+No connection could be made because the target machine actively refused it 192.168.56.1:9988
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 10:50:39 AM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket(EndPoint ipEndPoint)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.DecrementNumOfClients()
+   at ChatApplication.Main.Main_FormClosing(Object sender, FormClosingEventArgs e) in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 254
+Message :
+No connection could be made because the target machine actively refused it 192.168.56.1:9988
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 10:50:39 AM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket(EndPoint ipEndPoint)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.DecrementNumOfClients()
+   at ChatApplication.Main.Main_FormClosing(Object sender, FormClosingEventArgs e) in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 254
+Message :
+No connection could be made because the target machine actively refused it 192.168.56.1:9988
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 10:57:29 AM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket(EndPoint ipEndPoint)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.GetNumOfClients()
+   at ChatApplication.Main.ConnectToServer() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 108
+Message :
+No connection could be made because the target machine actively refused it 192.168.56.1:9988
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 10:58:10 AM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Runtime.Remoting.Channels.SocketStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Runtime.Remoting.Channels.ChunkedMemoryStream.WriteTo(Stream stream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.GetRequestStream(IMessage msg, Int32 contentLength, ITransportHeaders headers)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.SendRequest(IMessage msg, ITransportHeaders headers, Stream contentStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.DecrementNumOfClients()
+   at ChatApplication.Main.Main_FormClosing(Object sender, FormClosingEventArgs e) in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 253
+Message :
+An existing connection was forcibly closed by the remote host
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 10:58:11 AM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket(EndPoint ipEndPoint)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.DecrementNumOfClients()
+   at ChatApplication.Main.Main_FormClosing(Object sender, FormClosingEventArgs e) in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 253
+Message :
+No connection could be made because the target machine actively refused it 192.168.56.1:9988
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 10:58:24 AM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket(EndPoint ipEndPoint)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.DecrementNumOfClients()
+   at ChatApplication.Main.Main_FormClosing(Object sender, FormClosingEventArgs e) in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 253
+Message :
+No connection could be made because the target machine actively refused it 192.168.56.1:9988
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 11:00:28 AM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket(EndPoint ipEndPoint)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.BroadCastMessage(String Message)
+   at ChatApplication.Main.SendButton_Click(Object sender, EventArgs e) in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 209
+Message :
+No connection could be made because the target machine actively refused it 192.168.56.1:9988
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 11:00:34 AM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket(EndPoint ipEndPoint)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.DecrementNumOfClients()
+   at ChatApplication.Main.Main_FormClosing(Object sender, FormClosingEventArgs e) in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 254
+Message :
+No connection could be made because the target machine actively refused it 192.168.56.1:9988
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 11:00:47 AM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket(EndPoint ipEndPoint)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.DecrementNumOfClients()
+   at ChatApplication.Main.Main_FormClosing(Object sender, FormClosingEventArgs e) in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 254
+Message :
+No connection could be made because the target machine actively refused it 192.168.56.1:9988
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 11:03:16 AM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket(EndPoint ipEndPoint)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.DecrementNumOfClients()
+   at ChatApplication.Main.Main_FormClosing(Object sender, FormClosingEventArgs e) in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 253
+Message :
+No connection could be made because the target machine actively refused it 192.168.56.1:9988
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 11:03:30 AM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket(EndPoint ipEndPoint)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.DecrementNumOfClients()
+   at ChatApplication.Main.Main_FormClosing(Object sender, FormClosingEventArgs e) in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 253
+Message :
+No connection could be made because the target machine actively refused it 192.168.56.1:9988
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 11:03:31 AM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket(EndPoint ipEndPoint)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.DecrementNumOfClients()
+   at ChatApplication.Main.Main_FormClosing(Object sender, FormClosingEventArgs e) in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 253
+Message :
+No connection could be made because the target machine actively refused it 192.168.56.1:9988
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 11:18:20 AM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Runtime.Remoting.Channels.SocketStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Runtime.Remoting.Channels.ChunkedMemoryStream.WriteTo(Stream stream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.GetRequestStream(IMessage msg, Int32 contentLength, ITransportHeaders headers)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.SendRequest(IMessage msg, ITransportHeaders headers, Stream contentStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.BroadCastMessage(String Message)
+   at ChatApplication.Main.SendButton_Click(Object sender, EventArgs e) in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 207
+Message :
+An existing connection was forcibly closed by the remote host
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 11:37:58 AM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Runtime.Remoting.Channels.SocketStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at System.Runtime.Remoting.Channels.SocketHandler.ReadFromSocket(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Runtime.Remoting.Channels.SocketHandler.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Runtime.Remoting.Channels.SocketHandler.ReadAndMatchFourBytes(Byte[] buffer)
+   at System.Runtime.Remoting.Channels.Tcp.TcpSocketHandler.ReadAndMatchPreamble()
+   at System.Runtime.Remoting.Channels.Tcp.TcpSocketHandler.ReadVersionAndOperation(UInt16& operation)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.ReadHeaders()
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.BroadCastMessage(String Message)
+   at ChatApplication.Main.SendButton_Click(Object sender, EventArgs e) in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 207
+Message :
+An existing connection was forcibly closed by the remote host
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 11:38:15 AM
+Stack trace :
+   at ChatApplication.Main.SendButton_Click(Object sender, EventArgs e) in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 207
+Message :
+Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 11:38:18 AM
+Stack trace :
+   at ChatApplication.Main.SendButton_Click(Object sender, EventArgs e) in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 207
+Message :
+Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 12:39:00 PM
+Stack trace :
+   at ChatApplication.Main.ConnectToServer() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 109
+Message :
+The room is full
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 12:39:09 PM
+Stack trace :
+   at ChatApplication.Main.ConnectToServer() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 109
+Message :
+The room is full
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 12:39:16 PM
+Stack trace :
+   at ChatApplication.Main.SendButton_Click(Object sender, EventArgs e) in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 207
+Message :
+Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 12:53:21 PM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Runtime.Remoting.Channels.SocketStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Runtime.Remoting.Channels.ChunkedMemoryStream.WriteTo(Stream stream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.GetRequestStream(IMessage msg, Int32 contentLength, ITransportHeaders headers)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.SendRequest(IMessage msg, ITransportHeaders headers, Stream contentStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.ClientProxy.ProxyBroadCastMessage(String message)
+   at Server.ServerChat.InvokeMessage(String Message) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\ServerChat.cs:line 63
+Message :
+Client out
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 12:53:24 PM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Runtime.Remoting.Channels.SocketStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Runtime.Remoting.Channels.ChunkedMemoryStream.WriteTo(Stream stream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.GetRequestStream(IMessage msg, Int32 contentLength, ITransportHeaders headers)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.SendRequest(IMessage msg, ITransportHeaders headers, Stream contentStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.ClientProxy.ProxyBroadCastMessage(String message)
+   at Server.ServerChat.InvokeMessage(String Message) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\ServerChat.cs:line 63
+Message :
+Client out
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 12:54:39 PM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Runtime.Remoting.Channels.SocketStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Runtime.Remoting.Channels.ChunkedMemoryStream.WriteTo(Stream stream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.GetRequestStream(IMessage msg, Int32 contentLength, ITransportHeaders headers)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.SendRequest(IMessage msg, ITransportHeaders headers, Stream contentStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.ClientProxy.ProxyBroadCastMessage(String message)
+   at Server.ServerChat.InvokeMessage(String Message) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\ServerChat.cs:line 63
+Message :
+An existing connection was forcibly closed by the remote host
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 12:54:42 PM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Runtime.Remoting.Channels.SocketStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Runtime.Remoting.Channels.ChunkedMemoryStream.WriteTo(Stream stream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.GetRequestStream(IMessage msg, Int32 contentLength, ITransportHeaders headers)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.SendRequest(IMessage msg, ITransportHeaders headers, Stream contentStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.ClientProxy.ProxyBroadCastMessage(String message)
+   at Server.ServerChat.InvokeMessage(String Message) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\ServerChat.cs:line 63
+Message :
+An existing connection was forcibly closed by the remote host
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 12:58:30 PM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Runtime.Remoting.Channels.SocketStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Runtime.Remoting.Channels.ChunkedMemoryStream.WriteTo(Stream stream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.GetRequestStream(IMessage msg, Int32 contentLength, ITransportHeaders headers)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.SendRequest(IMessage msg, ITransportHeaders headers, Stream contentStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.ClientProxy.ProxyBroadCastMessage(String message)
+   at Server.ServerChat.InvokeMessage(String Message) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\ServerChat.cs:line 63
+Message :
+An existing connection was forcibly closed by the remote host
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:10:00 PM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Runtime.Remoting.Channels.SocketStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Runtime.Remoting.Channels.ChunkedMemoryStream.WriteTo(Stream stream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.GetRequestStream(IMessage msg, Int32 contentLength, ITransportHeaders headers)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.SendRequest(IMessage msg, ITransportHeaders headers, Stream contentStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.ClientProxy.ProxyBroadCastMessage(String message)
+   at Server.ServerChat.InvokeMessage(String Message) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\ServerChat.cs:line 63
+Message :
+An existing connection was forcibly closed by the remote host
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:13:31 PM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket(EndPoint ipEndPoint)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.ClientProxy.ProxyBroadCastMessage(String message)
+   at Server.ServerChat.InvokeMessage(String Message) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\ServerChat.cs:line 63
+Message :
+No connection could be made because the target machine actively refused it 192.168.56.1:60437
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:13:33 PM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket(EndPoint ipEndPoint)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.ClientProxy.ProxyBroadCastMessage(String message)
+   at Server.ServerChat.InvokeMessage(String Message) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\ServerChat.cs:line 63
+Message :
+No connection could be made because the target machine actively refused it 192.168.56.1:60438
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:13:47 PM
+Stack trace :
+
+Server stack trace: 
+   at System.RuntimeMethodHandle.SerializationInvoke(IRuntimeMethodInfo method, Object target, SerializationInfo info, StreamingContext& context)
+   at System.Runtime.Serialization.ObjectManager.CompleteISerializableObject(Object obj, SerializationInfo info, StreamingContext context)
+   at System.Runtime.Serialization.ObjectManager.FixupSpecialObject(ObjectHolder holder)
+   at System.Runtime.Serialization.ObjectManager.DoFixups()
+   at System.Runtime.Serialization.Formatters.Binary.ObjectReader.Deserialize(HeaderHandler handler, __BinaryParser serParser, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Remoting.Channels.CoreChannel.DeserializeBinaryRequestMessage(String objectUri, Stream inputStream, Boolean bStrictBinding, TypeFilterLevel securityLevel)
+   at System.Runtime.Remoting.Channels.BinaryServerFormatterSink.ProcessMessage(IServerChannelSinkStack sinkStack, IMessage requestMsg, ITransportHeaders requestHeaders, Stream requestStream, IMessage& responseMsg, ITransportHeaders& responseHeaders, Stream& responseStream)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.remove_MessageArrived(MessageArrivedEvent value)
+   at ChatApplication.Main.Closing_Client() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 297
+Message :
+Exception has been thrown by the target of an invocation.
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:13:59 PM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Runtime.Remoting.Channels.SocketStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Runtime.Remoting.Channels.ChunkedMemoryStream.WriteTo(Stream stream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.GetRequestStream(IMessage msg, Int32 contentLength, ITransportHeaders headers)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.SendRequest(IMessage msg, ITransportHeaders headers, Stream contentStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.ClientProxy.ProxyBroadCastMessage(String message)
+   at Server.ServerChat.InvokeMessage(String Message) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\ServerChat.cs:line 63
+Message :
+An existing connection was forcibly closed by the remote host
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:14:09 PM
+Stack trace :
+
+Server stack trace: 
+   at System.RuntimeMethodHandle.SerializationInvoke(IRuntimeMethodInfo method, Object target, SerializationInfo info, StreamingContext& context)
+   at System.Runtime.Serialization.ObjectManager.CompleteISerializableObject(Object obj, SerializationInfo info, StreamingContext context)
+   at System.Runtime.Serialization.ObjectManager.FixupSpecialObject(ObjectHolder holder)
+   at System.Runtime.Serialization.ObjectManager.DoFixups()
+   at System.Runtime.Serialization.Formatters.Binary.ObjectReader.Deserialize(HeaderHandler handler, __BinaryParser serParser, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Remoting.Channels.CoreChannel.DeserializeBinaryRequestMessage(String objectUri, Stream inputStream, Boolean bStrictBinding, TypeFilterLevel securityLevel)
+   at System.Runtime.Remoting.Channels.BinaryServerFormatterSink.ProcessMessage(IServerChannelSinkStack sinkStack, IMessage requestMsg, ITransportHeaders requestHeaders, Stream requestStream, IMessage& responseMsg, ITransportHeaders& responseHeaders, Stream& responseStream)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.remove_MessageArrived(MessageArrivedEvent value)
+   at ChatApplication.Main.Closing_Client() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 297
+Message :
+Exception has been thrown by the target of an invocation.
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:15:26 PM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket(EndPoint ipEndPoint)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.ClientProxy.ProxyBroadCastMessage(String message)
+   at Server.ServerChat.InvokeMessage(String Message) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\ServerChat.cs:line 63
+Message :
+No connection could be made because the target machine actively refused it 192.168.56.1:60459
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:15:29 PM
+Stack trace :
+
+Server stack trace: 
+   at System.RuntimeMethodHandle.SerializationInvoke(IRuntimeMethodInfo method, Object target, SerializationInfo info, StreamingContext& context)
+   at System.Runtime.Serialization.ObjectManager.CompleteISerializableObject(Object obj, SerializationInfo info, StreamingContext context)
+   at System.Runtime.Serialization.ObjectManager.FixupSpecialObject(ObjectHolder holder)
+   at System.Runtime.Serialization.ObjectManager.DoFixups()
+   at System.Runtime.Serialization.Formatters.Binary.ObjectReader.Deserialize(HeaderHandler handler, __BinaryParser serParser, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Remoting.Channels.CoreChannel.DeserializeBinaryRequestMessage(String objectUri, Stream inputStream, Boolean bStrictBinding, TypeFilterLevel securityLevel)
+   at System.Runtime.Remoting.Channels.BinaryServerFormatterSink.ProcessMessage(IServerChannelSinkStack sinkStack, IMessage requestMsg, ITransportHeaders requestHeaders, Stream requestStream, IMessage& responseMsg, ITransportHeaders& responseHeaders, Stream& responseStream)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.remove_MessageArrived(MessageArrivedEvent value)
+   at ChatApplication.Main.Closing_Client() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 297
+Message :
+Could not load file or assembly 'Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:17:10 PM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket(EndPoint ipEndPoint)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.ClientProxy.ProxyBroadCastMessage(String message)
+   at Server.ServerChat.InvokeMessage(String Message) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\ServerChat.cs:line 63
+Message :
+No connection could be made because the target machine actively refused it 192.168.56.1:60480
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:17:12 PM
+Stack trace :
+
+Server stack trace: 
+   at System.RuntimeMethodHandle.SerializationInvoke(IRuntimeMethodInfo method, Object target, SerializationInfo info, StreamingContext& context)
+   at System.Runtime.Serialization.ObjectManager.CompleteISerializableObject(Object obj, SerializationInfo info, StreamingContext context)
+   at System.Runtime.Serialization.ObjectManager.FixupSpecialObject(ObjectHolder holder)
+   at System.Runtime.Serialization.ObjectManager.DoFixups()
+   at System.Runtime.Serialization.Formatters.Binary.ObjectReader.Deserialize(HeaderHandler handler, __BinaryParser serParser, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Remoting.Channels.CoreChannel.DeserializeBinaryRequestMessage(String objectUri, Stream inputStream, Boolean bStrictBinding, TypeFilterLevel securityLevel)
+   at System.Runtime.Remoting.Channels.BinaryServerFormatterSink.ProcessMessage(IServerChannelSinkStack sinkStack, IMessage requestMsg, ITransportHeaders requestHeaders, Stream requestStream, IMessage& responseMsg, ITransportHeaders& responseHeaders, Stream& responseStream)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.remove_MessageArrived(MessageArrivedEvent value)
+   at ChatApplication.Main.Main_FormClosed(Object sender, FormClosedEventArgs e) in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 317
+Message :
+Could not load file or assembly 'Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:17:45 PM
+Stack trace :
+
+Server stack trace: 
+   at System.RuntimeMethodHandle.SerializationInvoke(IRuntimeMethodInfo method, Object target, SerializationInfo info, StreamingContext& context)
+   at System.Runtime.Serialization.ObjectManager.CompleteISerializableObject(Object obj, SerializationInfo info, StreamingContext context)
+   at System.Runtime.Serialization.ObjectManager.FixupSpecialObject(ObjectHolder holder)
+   at System.Runtime.Serialization.ObjectManager.DoFixups()
+   at System.Runtime.Serialization.Formatters.Binary.ObjectReader.Deserialize(HeaderHandler handler, __BinaryParser serParser, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Remoting.Channels.CoreChannel.DeserializeBinaryRequestMessage(String objectUri, Stream inputStream, Boolean bStrictBinding, TypeFilterLevel securityLevel)
+   at System.Runtime.Remoting.Channels.BinaryServerFormatterSink.ProcessMessage(IServerChannelSinkStack sinkStack, IMessage requestMsg, ITransportHeaders requestHeaders, Stream requestStream, IMessage& responseMsg, ITransportHeaders& responseHeaders, Stream& responseStream)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.remove_MessageArrived(MessageArrivedEvent value)
+   at ChatApplication.Main.Main_FormClosed(Object sender, FormClosedEventArgs e) in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 317
+Message :
+Could not load file or assembly 'Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:29:04 PM
+Stack trace :
+
+Server stack trace: 
+   at System.RuntimeMethodHandle.SerializationInvoke(IRuntimeMethodInfo method, Object target, SerializationInfo info, StreamingContext& context)
+   at System.Runtime.Serialization.ObjectManager.CompleteISerializableObject(Object obj, SerializationInfo info, StreamingContext context)
+   at System.Runtime.Serialization.ObjectManager.FixupSpecialObject(ObjectHolder holder)
+   at System.Runtime.Serialization.ObjectManager.DoFixups()
+   at System.Runtime.Serialization.Formatters.Binary.ObjectReader.Deserialize(HeaderHandler handler, __BinaryParser serParser, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Remoting.Channels.CoreChannel.DeserializeBinaryRequestMessage(String objectUri, Stream inputStream, Boolean bStrictBinding, TypeFilterLevel securityLevel)
+   at System.Runtime.Remoting.Channels.BinaryServerFormatterSink.ProcessMessage(IServerChannelSinkStack sinkStack, IMessage requestMsg, ITransportHeaders requestHeaders, Stream requestStream, IMessage& responseMsg, ITransportHeaders& responseHeaders, Stream& responseStream)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.remove_MessageArrived(MessageArrivedEvent value)
+   at ChatApplication.Main.Closing_Client() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 297
+Message :
+Could not load file or assembly 'Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:29:41 PM
+Stack trace :
+   at ChatApplication.Main.ConnectToServer() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 109
+Message :
+The room is full
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:30:30 PM
+Stack trace :
+
+Server stack trace: 
+   at System.RuntimeMethodHandle.SerializationInvoke(IRuntimeMethodInfo method, Object target, SerializationInfo info, StreamingContext& context)
+   at System.Runtime.Serialization.ObjectManager.CompleteISerializableObject(Object obj, SerializationInfo info, StreamingContext context)
+   at System.Runtime.Serialization.ObjectManager.FixupSpecialObject(ObjectHolder holder)
+   at System.Runtime.Serialization.ObjectManager.DoFixups()
+   at System.Runtime.Serialization.Formatters.Binary.ObjectReader.Deserialize(HeaderHandler handler, __BinaryParser serParser, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Remoting.Channels.CoreChannel.DeserializeBinaryRequestMessage(String objectUri, Stream inputStream, Boolean bStrictBinding, TypeFilterLevel securityLevel)
+   at System.Runtime.Remoting.Channels.BinaryServerFormatterSink.ProcessMessage(IServerChannelSinkStack sinkStack, IMessage requestMsg, ITransportHeaders requestHeaders, Stream requestStream, IMessage& responseMsg, ITransportHeaders& responseHeaders, Stream& responseStream)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.remove_MessageArrived(MessageArrivedEvent value)
+   at ChatApplication.Main.Closing_Client() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 297
+Message :
+Could not load file or assembly 'Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:30:32 PM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Runtime.Remoting.Channels.SocketStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Runtime.Remoting.Channels.ChunkedMemoryStream.WriteTo(Stream stream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.GetRequestStream(IMessage msg, Int32 contentLength, ITransportHeaders headers)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.SendRequest(IMessage msg, ITransportHeaders headers, Stream contentStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.ClientProxy.ProxyBroadCastMessage(String message)
+   at Server.ServerChat.InvokeMessage(String Message) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\ServerChat.cs:line 65
+Message :
+An existing connection was forcibly closed by the remote host
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:30:41 PM
+Stack trace :
+
+Server stack trace: 
+   at System.RuntimeMethodHandle.SerializationInvoke(IRuntimeMethodInfo method, Object target, SerializationInfo info, StreamingContext& context)
+   at System.Runtime.Serialization.ObjectManager.CompleteISerializableObject(Object obj, SerializationInfo info, StreamingContext context)
+   at System.Runtime.Serialization.ObjectManager.FixupSpecialObject(ObjectHolder holder)
+   at System.Runtime.Serialization.ObjectManager.DoFixups()
+   at System.Runtime.Serialization.Formatters.Binary.ObjectReader.Deserialize(HeaderHandler handler, __BinaryParser serParser, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Remoting.Channels.CoreChannel.DeserializeBinaryRequestMessage(String objectUri, Stream inputStream, Boolean bStrictBinding, TypeFilterLevel securityLevel)
+   at System.Runtime.Remoting.Channels.BinaryServerFormatterSink.ProcessMessage(IServerChannelSinkStack sinkStack, IMessage requestMsg, ITransportHeaders requestHeaders, Stream requestStream, IMessage& responseMsg, ITransportHeaders& responseHeaders, Stream& responseStream)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.remove_MessageArrived(MessageArrivedEvent value)
+   at ChatApplication.Main.Closing_Client() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 297
+Message :
+Could not load file or assembly 'Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:30:43 PM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Runtime.Remoting.Channels.SocketStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Runtime.Remoting.Channels.ChunkedMemoryStream.WriteTo(Stream stream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.GetRequestStream(IMessage msg, Int32 contentLength, ITransportHeaders headers)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.SendRequest(IMessage msg, ITransportHeaders headers, Stream contentStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.ClientProxy.ProxyBroadCastMessage(String message)
+   at Server.ServerChat.InvokeMessage(String Message) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\ServerChat.cs:line 65
+Message :
+An existing connection was forcibly closed by the remote host
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:30:45 PM
+Stack trace :
+
+Server stack trace: 
+   at System.RuntimeMethodHandle.SerializationInvoke(IRuntimeMethodInfo method, Object target, SerializationInfo info, StreamingContext& context)
+   at System.Runtime.Serialization.ObjectManager.CompleteISerializableObject(Object obj, SerializationInfo info, StreamingContext context)
+   at System.Runtime.Serialization.ObjectManager.FixupSpecialObject(ObjectHolder holder)
+   at System.Runtime.Serialization.ObjectManager.DoFixups()
+   at System.Runtime.Serialization.Formatters.Binary.ObjectReader.Deserialize(HeaderHandler handler, __BinaryParser serParser, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Remoting.Channels.CoreChannel.DeserializeBinaryRequestMessage(String objectUri, Stream inputStream, Boolean bStrictBinding, TypeFilterLevel securityLevel)
+   at System.Runtime.Remoting.Channels.BinaryServerFormatterSink.ProcessMessage(IServerChannelSinkStack sinkStack, IMessage requestMsg, ITransportHeaders requestHeaders, Stream requestStream, IMessage& responseMsg, ITransportHeaders& responseHeaders, Stream& responseStream)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.remove_MessageArrived(MessageArrivedEvent value)
+   at ChatApplication.Main.Closing_Client() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 297
+Message :
+Could not load file or assembly 'Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:31:01 PM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket(EndPoint ipEndPoint)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.ClientProxy.ProxyBroadCastMessage(String message)
+   at Server.ServerChat.InvokeMessage(String Message) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\ServerChat.cs:line 65
+Message :
+No connection could be made because the target machine actively refused it 192.168.56.1:60550
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:31:38 PM
+Stack trace :
+
+Server stack trace: 
+   at System.RuntimeMethodHandle.SerializationInvoke(IRuntimeMethodInfo method, Object target, SerializationInfo info, StreamingContext& context)
+   at System.Runtime.Serialization.ObjectManager.CompleteISerializableObject(Object obj, SerializationInfo info, StreamingContext context)
+   at System.Runtime.Serialization.ObjectManager.FixupSpecialObject(ObjectHolder holder)
+   at System.Runtime.Serialization.ObjectManager.DoFixups()
+   at System.Runtime.Serialization.Formatters.Binary.ObjectReader.Deserialize(HeaderHandler handler, __BinaryParser serParser, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Remoting.Channels.CoreChannel.DeserializeBinaryRequestMessage(String objectUri, Stream inputStream, Boolean bStrictBinding, TypeFilterLevel securityLevel)
+   at System.Runtime.Remoting.Channels.BinaryServerFormatterSink.ProcessMessage(IServerChannelSinkStack sinkStack, IMessage requestMsg, ITransportHeaders requestHeaders, Stream requestStream, IMessage& responseMsg, ITransportHeaders& responseHeaders, Stream& responseStream)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.remove_MessageArrived(MessageArrivedEvent value)
+   at ChatApplication.Main.Closing_Client() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 297
+Message :
+Could not load file or assembly 'Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:31:40 PM
+Stack trace :
+
+Server stack trace: 
+   at System.RuntimeMethodHandle.SerializationInvoke(IRuntimeMethodInfo method, Object target, SerializationInfo info, StreamingContext& context)
+   at System.Runtime.Serialization.ObjectManager.CompleteISerializableObject(Object obj, SerializationInfo info, StreamingContext context)
+   at System.Runtime.Serialization.ObjectManager.FixupSpecialObject(ObjectHolder holder)
+   at System.Runtime.Serialization.ObjectManager.DoFixups()
+   at System.Runtime.Serialization.Formatters.Binary.ObjectReader.Deserialize(HeaderHandler handler, __BinaryParser serParser, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Remoting.Channels.CoreChannel.DeserializeBinaryRequestMessage(String objectUri, Stream inputStream, Boolean bStrictBinding, TypeFilterLevel securityLevel)
+   at System.Runtime.Remoting.Channels.BinaryServerFormatterSink.ProcessMessage(IServerChannelSinkStack sinkStack, IMessage requestMsg, ITransportHeaders requestHeaders, Stream requestStream, IMessage& responseMsg, ITransportHeaders& responseHeaders, Stream& responseStream)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.remove_MessageArrived(MessageArrivedEvent value)
+   at ChatApplication.Main.Closing_Client() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 297
+Message :
+Could not load file or assembly 'Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:35:34 PM
+Stack trace :
+
+Server stack trace: 
+   at System.RuntimeMethodHandle.SerializationInvoke(IRuntimeMethodInfo method, Object target, SerializationInfo info, StreamingContext& context)
+   at System.Runtime.Serialization.ObjectManager.CompleteISerializableObject(Object obj, SerializationInfo info, StreamingContext context)
+   at System.Runtime.Serialization.ObjectManager.FixupSpecialObject(ObjectHolder holder)
+   at System.Runtime.Serialization.ObjectManager.DoFixups()
+   at System.Runtime.Serialization.Formatters.Binary.ObjectReader.Deserialize(HeaderHandler handler, __BinaryParser serParser, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Remoting.Channels.CoreChannel.DeserializeBinaryRequestMessage(String objectUri, Stream inputStream, Boolean bStrictBinding, TypeFilterLevel securityLevel)
+   at System.Runtime.Remoting.Channels.BinaryServerFormatterSink.ProcessMessage(IServerChannelSinkStack sinkStack, IMessage requestMsg, ITransportHeaders requestHeaders, Stream requestStream, IMessage& responseMsg, ITransportHeaders& responseHeaders, Stream& responseStream)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.remove_MessageArrived(MessageArrivedEvent value)
+   at ChatApplication.Main.Closing_Client() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 304
+Message :
+Could not load file or assembly 'Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:35:36 PM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Runtime.Remoting.Channels.SocketStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Runtime.Remoting.Channels.ChunkedMemoryStream.WriteTo(Stream stream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.GetRequestStream(IMessage msg, Int32 contentLength, ITransportHeaders headers)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.SendRequest(IMessage msg, ITransportHeaders headers, Stream contentStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.ClientProxy.ProxyBroadCastMessage(String message)
+   at Server.ServerChat.InvokeMessage(String Message) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\ServerChat.cs:line 65
+Message :
+An existing connection was forcibly closed by the remote host
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:35:41 PM
+Stack trace :
+
+Server stack trace: 
+   at System.RuntimeMethodHandle.SerializationInvoke(IRuntimeMethodInfo method, Object target, SerializationInfo info, StreamingContext& context)
+   at System.Runtime.Serialization.ObjectManager.CompleteISerializableObject(Object obj, SerializationInfo info, StreamingContext context)
+   at System.Runtime.Serialization.ObjectManager.FixupSpecialObject(ObjectHolder holder)
+   at System.Runtime.Serialization.ObjectManager.DoFixups()
+   at System.Runtime.Serialization.Formatters.Binary.ObjectReader.Deserialize(HeaderHandler handler, __BinaryParser serParser, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Remoting.Channels.CoreChannel.DeserializeBinaryRequestMessage(String objectUri, Stream inputStream, Boolean bStrictBinding, TypeFilterLevel securityLevel)
+   at System.Runtime.Remoting.Channels.BinaryServerFormatterSink.ProcessMessage(IServerChannelSinkStack sinkStack, IMessage requestMsg, ITransportHeaders requestHeaders, Stream requestStream, IMessage& responseMsg, ITransportHeaders& responseHeaders, Stream& responseStream)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.remove_MessageArrived(MessageArrivedEvent value)
+   at ChatApplication.Main.Closing_Client() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 304
+Message :
+Could not load file or assembly 'Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:35:43 PM
+Stack trace :
+
+Server stack trace: 
+   at System.RuntimeMethodHandle.SerializationInvoke(IRuntimeMethodInfo method, Object target, SerializationInfo info, StreamingContext& context)
+   at System.Runtime.Serialization.ObjectManager.CompleteISerializableObject(Object obj, SerializationInfo info, StreamingContext context)
+   at System.Runtime.Serialization.ObjectManager.FixupSpecialObject(ObjectHolder holder)
+   at System.Runtime.Serialization.ObjectManager.DoFixups()
+   at System.Runtime.Serialization.Formatters.Binary.ObjectReader.Deserialize(HeaderHandler handler, __BinaryParser serParser, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Remoting.Channels.CoreChannel.DeserializeBinaryRequestMessage(String objectUri, Stream inputStream, Boolean bStrictBinding, TypeFilterLevel securityLevel)
+   at System.Runtime.Remoting.Channels.BinaryServerFormatterSink.ProcessMessage(IServerChannelSinkStack sinkStack, IMessage requestMsg, ITransportHeaders requestHeaders, Stream requestStream, IMessage& responseMsg, ITransportHeaders& responseHeaders, Stream& responseStream)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.remove_MessageArrived(MessageArrivedEvent value)
+   at ChatApplication.Main.Closing_Client() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 304
+Message :
+Could not load file or assembly 'Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:35:57 PM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.GetNumOfClients()
+   at ChatApplication.Main.ConnectToServer() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 107
+Message :
+No such host is known
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:36:15 PM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.GetNumOfClients()
+   at ChatApplication.Main.ConnectToServer() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 107
+Message :
+No such host is known
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:36:36 PM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.GetNumOfClients()
+   at ChatApplication.Main.ConnectToServer() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 107
+Message :
+No such host is known
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:36:48 PM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.GetNumOfClients()
+   at ChatApplication.Main.ConnectToServer() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 107
+Message :
+No such host is known
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:37:03 PM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.GetNumOfClients()
+   at ChatApplication.Main.ConnectToServer() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 107
+Message :
+No such host is known
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:37:05 PM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket(EndPoint ipEndPoint)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.GetNumOfClients()
+   at ChatApplication.Main.ConnectToServer() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 107
+Message :
+No connection could be made because the target machine actively refused it 192.168.56.1:9988
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:39:22 PM
+Stack trace :
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at System.Net.Sockets.TcpListener.Start(Int32 backlog)
+   at System.Runtime.Remoting.Channels.ExclusiveTcpListener.Start(Boolean exclusiveAddressUse)
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.StartListening(Object data)
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.SetupChannel()
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel..ctor(String name, Int32 port, IServerChannelSinkProvider sinkProvider)
+   at Server.Server.Main(String[] args) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\Server.cs:line 32
+Message :
+Server is already running
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 1:40:12 PM
+Stack trace :
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at System.Net.Sockets.TcpListener.Start(Int32 backlog)
+   at System.Runtime.Remoting.Channels.ExclusiveTcpListener.Start(Boolean exclusiveAddressUse)
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.StartListening(Object data)
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.SetupChannel()
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel..ctor(String name, Int32 port, IServerChannelSinkProvider sinkProvider)
+   at Server.Server.Main(String[] args) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\Server.cs:line 31
+Message :
+Server is already running
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 2:16:42 PM
+Stack trace :
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at System.Net.Sockets.TcpListener.Start(Int32 backlog)
+   at System.Runtime.Remoting.Channels.ExclusiveTcpListener.Start(Boolean exclusiveAddressUse)
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.StartListening(Object data)
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.SetupChannel()
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel..ctor(String name, Int32 port, IServerChannelSinkProvider sinkProvider)
+   at Server.Server.Main(String[] args) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\Server.cs:line 31
+Message :
+Server is already running
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 2:16:50 PM
+Stack trace :
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at System.Net.Sockets.TcpListener.Start(Int32 backlog)
+   at System.Runtime.Remoting.Channels.ExclusiveTcpListener.Start(Boolean exclusiveAddressUse)
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.StartListening(Object data)
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.SetupChannel()
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel..ctor(String name, Int32 port, IServerChannelSinkProvider sinkProvider)
+   at Server.Server.Main(String[] args) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\Server.cs:line 31
+Message :
+Server is already running
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 2:17:30 PM
+Stack trace :
+
+Server stack trace: 
+   at System.RuntimeMethodHandle.SerializationInvoke(IRuntimeMethodInfo method, Object target, SerializationInfo info, StreamingContext& context)
+   at System.Runtime.Serialization.ObjectManager.CompleteISerializableObject(Object obj, SerializationInfo info, StreamingContext context)
+   at System.Runtime.Serialization.ObjectManager.FixupSpecialObject(ObjectHolder holder)
+   at System.Runtime.Serialization.ObjectManager.DoFixups()
+   at System.Runtime.Serialization.Formatters.Binary.ObjectReader.Deserialize(HeaderHandler handler, __BinaryParser serParser, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Remoting.Channels.CoreChannel.DeserializeBinaryRequestMessage(String objectUri, Stream inputStream, Boolean bStrictBinding, TypeFilterLevel securityLevel)
+   at System.Runtime.Remoting.Channels.BinaryServerFormatterSink.ProcessMessage(IServerChannelSinkStack sinkStack, IMessage requestMsg, ITransportHeaders requestHeaders, Stream requestStream, IMessage& responseMsg, ITransportHeaders& responseHeaders, Stream& responseStream)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.remove_MessageArrived(MessageArrivedEvent value)
+   at ChatApplication.Main.Closing_Client() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 304
+Message :
+Could not load file or assembly 'Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 2:17:33 PM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Runtime.Remoting.Channels.SocketStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Runtime.Remoting.Channels.ChunkedMemoryStream.WriteTo(Stream stream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.GetRequestStream(IMessage msg, Int32 contentLength, ITransportHeaders headers)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.SendRequest(IMessage msg, ITransportHeaders headers, Stream contentStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.ClientProxy.ProxyBroadCastMessage(String message)
+   at Server.ServerChat.InvokeMessage(String Message) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\ServerChat.cs:line 64
+Message :
+An existing connection was forcibly closed by the remote host
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 2:17:37 PM
+Stack trace :
+
+Server stack trace: 
+   at System.RuntimeMethodHandle.SerializationInvoke(IRuntimeMethodInfo method, Object target, SerializationInfo info, StreamingContext& context)
+   at System.Runtime.Serialization.ObjectManager.CompleteISerializableObject(Object obj, SerializationInfo info, StreamingContext context)
+   at System.Runtime.Serialization.ObjectManager.FixupSpecialObject(ObjectHolder holder)
+   at System.Runtime.Serialization.ObjectManager.DoFixups()
+   at System.Runtime.Serialization.Formatters.Binary.ObjectReader.Deserialize(HeaderHandler handler, __BinaryParser serParser, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Remoting.Channels.CoreChannel.DeserializeBinaryRequestMessage(String objectUri, Stream inputStream, Boolean bStrictBinding, TypeFilterLevel securityLevel)
+   at System.Runtime.Remoting.Channels.BinaryServerFormatterSink.ProcessMessage(IServerChannelSinkStack sinkStack, IMessage requestMsg, ITransportHeaders requestHeaders, Stream requestStream, IMessage& responseMsg, ITransportHeaders& responseHeaders, Stream& responseStream)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.remove_MessageArrived(MessageArrivedEvent value)
+   at ChatApplication.Main.Closing_Client() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 304
+Message :
+Could not load file or assembly 'Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 2:17:38 PM
+Stack trace :
+
+Server stack trace: 
+   at System.RuntimeMethodHandle.SerializationInvoke(IRuntimeMethodInfo method, Object target, SerializationInfo info, StreamingContext& context)
+   at System.Runtime.Serialization.ObjectManager.CompleteISerializableObject(Object obj, SerializationInfo info, StreamingContext context)
+   at System.Runtime.Serialization.ObjectManager.FixupSpecialObject(ObjectHolder holder)
+   at System.Runtime.Serialization.ObjectManager.DoFixups()
+   at System.Runtime.Serialization.Formatters.Binary.ObjectReader.Deserialize(HeaderHandler handler, __BinaryParser serParser, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Remoting.Channels.CoreChannel.DeserializeBinaryRequestMessage(String objectUri, Stream inputStream, Boolean bStrictBinding, TypeFilterLevel securityLevel)
+   at System.Runtime.Remoting.Channels.BinaryServerFormatterSink.ProcessMessage(IServerChannelSinkStack sinkStack, IMessage requestMsg, ITransportHeaders requestHeaders, Stream requestStream, IMessage& responseMsg, ITransportHeaders& responseHeaders, Stream& responseStream)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.remove_MessageArrived(MessageArrivedEvent value)
+   at ChatApplication.Main.Closing_Client() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 304
+Message :
+Could not load file or assembly 'Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 2:20:26 PM
+Stack trace :
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at System.Net.Sockets.TcpListener.Start(Int32 backlog)
+   at System.Runtime.Remoting.Channels.ExclusiveTcpListener.Start(Boolean exclusiveAddressUse)
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.StartListening(Object data)
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.SetupChannel()
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel..ctor(String name, Int32 port, IServerChannelSinkProvider sinkProvider)
+   at Server.Server.Main(String[] args) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\Server.cs:line 31
+Message :
+Server is already running
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 2:20:29 PM
+Stack trace :
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at System.Net.Sockets.TcpListener.Start(Int32 backlog)
+   at System.Runtime.Remoting.Channels.ExclusiveTcpListener.Start(Boolean exclusiveAddressUse)
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.StartListening(Object data)
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.SetupChannel()
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel..ctor(String name, Int32 port, IServerChannelSinkProvider sinkProvider)
+   at Server.Server.Main(String[] args) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\Server.cs:line 31
+Message :
+Server is already running
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 2:20:32 PM
+Stack trace :
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at System.Net.Sockets.TcpListener.Start(Int32 backlog)
+   at System.Runtime.Remoting.Channels.ExclusiveTcpListener.Start(Boolean exclusiveAddressUse)
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.StartListening(Object data)
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.SetupChannel()
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel..ctor(String name, Int32 port, IServerChannelSinkProvider sinkProvider)
+   at Server.Server.Main(String[] args) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\Server.cs:line 31
+Message :
+Server is already running
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 2:20:36 PM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket(EndPoint ipEndPoint)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.ClientProxy.ProxyBroadCastMessage(String message)
+   at Server.ServerChat.InvokeMessage(String Message) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\ServerChat.cs:line 64
+Message :
+No connection could be made because the target machine actively refused it 192.168.56.1:60844
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 2:20:38 PM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket(EndPoint ipEndPoint)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.ClientProxy.ProxyBroadCastMessage(String message)
+   at Server.ServerChat.InvokeMessage(String Message) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\ServerChat.cs:line 64
+Message :
+No connection could be made because the target machine actively refused it 192.168.56.1:60848
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 2:20:43 PM
+Stack trace :
+   at ChatApplication.Main.ConnectToServer() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 109
+Message :
+The room is full
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 2:20:49 PM
+Stack trace :
+   at ChatApplication.Main.ConnectToServer() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 109
+Message :
+The room is full
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 2:21:08 PM
+Stack trace :
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at System.Net.Sockets.TcpListener.Start(Int32 backlog)
+   at System.Runtime.Remoting.Channels.ExclusiveTcpListener.Start(Boolean exclusiveAddressUse)
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.StartListening(Object data)
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.SetupChannel()
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel..ctor(String name, Int32 port, IServerChannelSinkProvider sinkProvider)
+   at Server.Server.Main(String[] args) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\Server.cs:line 31
+Message :
+Server is already running
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 2:21:09 PM
+Stack trace :
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at System.Net.Sockets.TcpListener.Start(Int32 backlog)
+   at System.Runtime.Remoting.Channels.ExclusiveTcpListener.Start(Boolean exclusiveAddressUse)
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.StartListening(Object data)
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.SetupChannel()
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel..ctor(String name, Int32 port, IServerChannelSinkProvider sinkProvider)
+   at Server.Server.Main(String[] args) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\Server.cs:line 31
+Message :
+Server is already running
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 2:42:24 PM
+Stack trace :
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at System.Net.Sockets.TcpListener.Start(Int32 backlog)
+   at System.Runtime.Remoting.Channels.ExclusiveTcpListener.Start(Boolean exclusiveAddressUse)
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.StartListening(Object data)
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.SetupChannel()
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel..ctor(String name, Int32 port, IServerChannelSinkProvider sinkProvider)
+   at Server.Server.Main(String[] args) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\Server.cs:line 31
+Message :
+Server is already running
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 2:42:24 PM
+Stack trace :
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at System.Net.Sockets.TcpListener.Start(Int32 backlog)
+   at System.Runtime.Remoting.Channels.ExclusiveTcpListener.Start(Boolean exclusiveAddressUse)
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.StartListening(Object data)
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.SetupChannel()
+   at System.Runtime.Remoting.Channels.Tcp.TcpServerChannel..ctor(String name, Int32 port, IServerChannelSinkProvider sinkProvider)
+   at Server.Server.Main(String[] args) in C:\Users\a.barakat\source\repos\.NetChatApplication\Server\Server.cs:line 31
+Message :
+Server is already running
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 2:47:26 PM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Runtime.Remoting.Channels.SocketStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Runtime.Remoting.Channels.ChunkedMemoryStream.WriteTo(Stream stream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.GetRequestStream(IMessage msg, Int32 contentLength, ITransportHeaders headers)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.SendRequest(IMessage msg, ITransportHeaders headers, Stream contentStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.DecrementNumOfClients()
+   at ChatApplication.Main.Main_FormClosed(Object sender, FormClosedEventArgs e) in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 322
+Message :
+An existing connection was forcibly closed by the remote host
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 2:51:21 PM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Runtime.Remoting.Channels.SocketStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Runtime.Remoting.Channels.ChunkedMemoryStream.WriteTo(Stream stream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.GetRequestStream(IMessage msg, Int32 contentLength, ITransportHeaders headers)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientSocketHandler.SendRequest(IMessage msg, ITransportHeaders headers, Stream contentStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.BroadCastMessage(String Message)
+   at ChatApplication.Main.SendButton_Click(Object sender, EventArgs e) in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 211
+Message :
+An existing connection was forcibly closed by the remote host
+---------------------------------------------------------------------------------------------------------------
+Date : 4/24/2019 2:51:27 PM
+Stack trace :
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket(EndPoint ipEndPoint)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket()
+   at System.Runtime.Remoting.Channels.RemoteConnection.GetSocket()
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders& responseHeaders, Stream& responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ChatApp.IChat.GetNumOfClients()
+   at ChatApplication.Main.ConnectToServer() in C:\Users\a.barakat\source\repos\.NetChatApplication\Client\Main.cs:line 105
+Message :
+No connection could be made because the target machine actively refused it 192.168.56.1:9988
+---------------------------------------------------------------------------------------------------------------
